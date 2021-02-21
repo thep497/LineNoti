@@ -41,6 +41,7 @@ namespace LineNoti
             this.txtResult = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnSearchFile = new System.Windows.Forms.Button();
+            this.cbNotify = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtMessage
@@ -53,9 +54,9 @@ namespace LineNoti
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(423, 110);
+            this.btnSend.Location = new System.Drawing.Point(423, 138);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(94, 91);
+            this.btnSend.Size = new System.Drawing.Size(94, 63);
             this.btnSend.TabIndex = 4;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -147,11 +148,24 @@ namespace LineNoti
             this.btnSearchFile.UseVisualStyleBackColor = true;
             this.btnSearchFile.Click += new System.EventHandler(this.btnSearchFile_Click);
             // 
+            // cbNotify
+            // 
+            this.cbNotify.AutoSize = true;
+            this.cbNotify.Checked = true;
+            this.cbNotify.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbNotify.Location = new System.Drawing.Point(423, 113);
+            this.cbNotify.Name = "cbNotify";
+            this.cbNotify.Size = new System.Drawing.Size(72, 24);
+            this.cbNotify.TabIndex = 4;
+            this.cbNotify.Text = "Notify";
+            this.cbNotify.UseVisualStyleBackColor = true;
+            // 
             // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 253);
+            this.Controls.Add(this.cbNotify);
             this.Controls.Add(this.btnSearchFile);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtResult);
@@ -186,6 +200,7 @@ namespace LineNoti
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnSearchFile;
+        private System.Windows.Forms.CheckBox cbNotify;
     }
 }
 

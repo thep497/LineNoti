@@ -15,16 +15,33 @@ namespace LineNoti
     public class LineNotify
     {
         private const string lineNotiRequestAPI = "https://notify-api.line.me/api/notify";
-        private string lineToken { get; set; }
+        private string lineToken;
+        private bool notificationDisabled;
 
-        public LineNotify(string token = "")
+        public string LineToken { get => lineToken; set => lineToken = value; }
+        public bool NotificationDisabled { get => notificationDisabled; set => notificationDisabled = value; }
+
+        public LineNotify(string token = "", bool notificationdisabled = false)
         {
             if (string.IsNullOrWhiteSpace(token))
                 token = "-- place your default token here --";
             lineToken = token;
+            notificationDisabled = notificationdisabled;
         }
 
-        public string NotifyAsync(string msg, string imgPath, int stickerPackageId=0, int stickerId=0, bool notificationDisabled=false)
+        public string SendMessage(string msg)
+        {
+            return this.Notify(msg);
+        }
+        public string SendSticker(string msg, int stickerPackageId, int stickerId)
+        {
+            return this.Notify(msg, null, stickerPackageId, stickerId);
+        }
+        public string SendPhotoFile(string msg, string imgPath)
+        {
+            return this.Notify(msg, imgPath);
+        }
+        public string Notify(string msg, string imgPath = null, int stickerPackageId = 0, int stickerId = 0)
         {
             if (!string.IsNullOrWhiteSpace(imgPath) && !File.Exists(imgPath))
                 return string.Format("{0} not existed.", imgPath);
@@ -40,12 +57,12 @@ namespace LineNoti
                     var contentType = MimeTypes.GetContentType(imgPath);
                     formDataContent.Add(imgPath.ToStreamContent(contentType), "imageFile", imgPath);
                 }
-                if ((stickerPackageId >0) && (stickerId >0))
+                if ((stickerPackageId > 0) && (stickerId > 0))
                 {
                     formDataContent.Add(new StringContent(stickerPackageId.ToString()), "stickerPackageId");
                     formDataContent.Add(new StringContent(stickerId.ToString()), "stickerId");
                 }
-                if(notificationDisabled)
+                if (notificationDisabled)
                 {
                     formDataContent.Add(new StringContent("true"), "notificationDisabled");
                 }

@@ -24,12 +24,14 @@ namespace LineNoti
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var lNote = new LineNotify(txtToken.Text);
+            var lNotify = new LineNotify(txtToken.Text);
             using (new WaitCursor())
             {
                 //txtResult.Text = lNote.NotifyAsync(txtMessage.Text, txtImagePath.Text, 2, 30);
                 //txtResult.Text = lNote.NotifyAsync(txtMessage.Text, txtImagePath.Text, 1, 8, true);
-                txtResult.Text = lNote.NotifyAsync(txtMessage.Text, txtImagePath.Text);
+                //txtResult.Text = lNotify.Notify(txtMessage.Text, txtImagePath.Text);
+                lNotify.NotificationDisabled = !cbNotify.Checked;
+                txtResult.Text = lNotify.SendPhotoFile(txtMessage.Text, txtImagePath.Text);
             }
         }
 
