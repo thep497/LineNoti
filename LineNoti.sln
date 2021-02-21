@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineNoti", "LineNoti\LineNoti.csproj", "{A80A0A3F-6FCF-4FC7-9F9F-CDE618BBABAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A80A0A3F-6FCF-4FC7-9F9F-CDE618BBABAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80A0A3F-6FCF-4FC7-9F9F-CDE618BBABAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80A0A3F-6FCF-4FC7-9F9F-CDE618BBABAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80A0A3F-6FCF-4FC7-9F9F-CDE618BBABAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {584A057A-1331-4E77-83A1-AD1087C128BD}
+	EndGlobalSection
+EndGlobal
